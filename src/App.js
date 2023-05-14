@@ -1,24 +1,32 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
+
+import SignUp from './component/SignUp.tsx';
+import SignIn from './component/SignIn.tsx';
+import {BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+// import DashBoard from './component/dashboard/dashboard.tsx';
+import AddProductComponent from './component/dashboard/addProduct.tsx';
+import ViewProductComponent from './component/dashboard/viewProduct.tsx';
+
+
+
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+     <Router>
+
+      <Routes>
+        <Route path="/signUp" element={<SignUp />}/>
+        <Route path="/signIp" element={<SignIn/>}/>
+        {/* <Route path="/dashboard/*" element={<DashBoard />} /> */}
+        <Route path="/dashboard/addProduct" element={<AddProductComponent/>}/>
+        <Route path="/dashboard/viewProduct" element={<ViewProductComponent/>}/>
+
+        </Routes>
+
+    </Router>
   );
 }
 
